@@ -1,13 +1,15 @@
 import java.util.*;
 import java.lang.*;
 
+/*Trigger1 will be diffused if the characters
+  'c' and 's' are entered in any order. The trigger
+  won't be diffused if the exclamation mark ("!")
+  or anything other than 'c' and 's'
+*/
+
 public class Passphrase1{
     public static void main(String[] args){
-	System.out.println("args.length = " + args.length);
-    for(String s: args)
-    	System.out.println(s);
-	trigger1(args);
-
+	    trigger1(args);
   }
 
 public static void trigger1(String[] input){
@@ -15,7 +17,8 @@ public static void trigger1(String[] input){
 	boolean foundS = false;
 
 	if(input[0].equals("cs")){
-		System.out.println("Trigger 1 diffused");
+		System.out.println("You have proved your worthiness!!");
+    System.out.println("Now what about the 2nd?");
     System.exit(1);
 	}
   else{
@@ -36,10 +39,11 @@ public static void trigger1(String[] input){
   }
 
 	if(foundC && foundS){
-    System.out.println("Trigger 1 diffused");
+    System.out.println("You have proved your worthiness!!");
+    System.out.println("Now what about the 2nd?");
     System.exit(1);
   }
-  System.out.println(" Wrong! ");
+  System.out.println("Wrong. The earth has been destroyed! Just kidding... try again and dont get discouraged!");
 	System.exit(1);
 	}
 }
