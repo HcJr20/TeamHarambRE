@@ -1,43 +1,39 @@
 import java.time.*;
 import java.util.*;
-import java.lang.*;
+
+/*To find passphrase 3, trigger3 takes an array of three integers:
+  int month, int day, int hour and compares them
+  with the current month, day, and hour of day with
+  the following modification:
+    current month * 2
+    current day * 3
+    current hour * 4
+  The trigger is diffused if and only if the three arguments
+  meet this criteria.
+    */
 
  public class Passphrase3{
     public static void main(String[] args){
-	/*System.out.println("args.length = " + args.length);
-    for(String s: args){
-    	System.out.println(s);
-	}*/
-
-	trigger3(args);
-
+	    trigger3(args);
     }
 
 
   public static void trigger3(String [] input){
 		 LocalDateTime rightNow = LocalDateTime.now();
-		 int month = rightNow.getMonth().getValue();
-		// System.out.println("month equals: " + rightNow.getMonth().getValue());
-		 int day = rightNow.getDayOfMonth();
-		 //System.out.println("day equals: " + rightNow.getDayOfMonth());
-		 int hour = rightNow.getHour();
-		 //System.out.println("hour = " + rightNow.getHour());
+		 int month = rightNow.getMonth().getValue(); //current month
+		 int day = rightNow.getDayOfMonth(); //current day
+		 int hour = rightNow.getHour();//current hour
 
-		 /*for(String s: input){
-			 System.out.println(s);
-		 }*/
-
-		 int firstArg = Integer.parseInt(input[0]);
-		 int secondArg = Integer.parseInt(input[1]);
-		 int thirdArg = Integer.parseInt(input[2]);
+		 int firstArg = Integer.parseInt(input[0]); //month input by user
+		 int secondArg = Integer.parseInt(input[1]); //day input by user
+		 int thirdArg = Integer.parseInt(input[2]); //hour input by user
 
 		 if(firstArg == month *2 && secondArg == day * 3 && thirdArg== hour *4){
-			 System.out.println("Trigger 3 Diffused");
-			 //System.out.println("Trigger 3 diffused. The bad scientist is getting nervous! Next?");
+			 System.out.println("Trigger 3 diffused. The bad scientist is getting nervous! Next?");
 			 return;
 		 }
 		 else{
-			 System.out.println("Wrong!");
+			 System.out.println("Wrong. The earth has been destroyed! Just kidding... try again and dont get discouraged!");
 		 }
 
 	 }
