@@ -1,9 +1,14 @@
+/*To find passphrase 4, trigger4 takes an array
+and checks its contents. There are several possible
+array combinations that will difusse the trigger:
+    8 x 20 a
+    8 x 30 c
+    11 *any char but x* 5 r
+    21 *any char* 21 r
+    */
 public class Passphrase4{
 
     public static void main(String[]args){
-      for(String s : args){
-        System.out.println(s);
-      }
       trigger4(args);
     }
 
