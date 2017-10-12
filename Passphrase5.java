@@ -1,17 +1,21 @@
+package passcode5;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+public class passcode5 {
 
-public class Passphrase5 {
-
-	public void main() throws FileNotFoundException {
+	public static void main(String args[]) throws FileNotFoundException {
+		
 		File f = new File("file.txt");
 		Scanner sc = new Scanner(f);
-		if (f.exists() && !f.isDirectory()) { // if file exist's
-
+		if (f.exists() ) { // if file exist's
+			
 			char var;
 			int i = 0;
-			boolean mistake = false;
+			boolean mistake = false; 
+			if(!sc.hasNext())
+				mistake = true;
 			while(sc.hasNext() && mistake == false){
 				var = sc.next().charAt(i);
 				if(hasMistake(var,i)){
@@ -30,10 +34,10 @@ public class Passphrase5 {
 		}
 		sc.close();
 	}
-
-	boolean hasMistake(char var, int pos){
+	
+	static boolean hasMistake(char var, int pos){
 		boolean ret = true;
-
+		
 		if(var == 'g' && pos == 0)
 			ret = false;
 		else if(var == 'o' && pos == 3 || pos == 8 || pos == 41)
@@ -46,7 +50,7 @@ public class Passphrase5 {
 			ret = false;
 		else if(var == ' ' && pos != 3 || pos != 8 || pos != 41 || pos != 17 || pos != 28 || pos != 56)
 			ret = false;
-
+		
 		return ret;
 	}
 }
